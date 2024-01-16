@@ -17,6 +17,8 @@ var app = builder.Build();
 
 // configure HTTP request pipeline
 {
+    app.UseHttpsRedirection();
+
     // global cors policy
     app.UseCors(x => x
         .AllowAnyOrigin()
@@ -29,4 +31,4 @@ var app = builder.Build();
     app.MapControllers();
 }
 
-app.Run("http://localhost:4000");
+app.Run();
