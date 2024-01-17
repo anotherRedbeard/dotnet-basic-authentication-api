@@ -14,7 +14,8 @@ public class UserService : IUserService
     private List<User> _users = new List<User>
     {
         new User { Id = 1, FirstName = "Test", LastName = "User1", Username = "test", Password = "test" },
-        new User { Id = 2, FirstName = "Test", LastName = "User2", Username = "test", Password = "password" }
+        new User { Id = 2, FirstName = "Test", LastName = "User2", Username = "test", Password = "test2" },
+        new User { Id = 3, FirstName = "Test", LastName = "User3", Username = "test", Password = "password" }
     };
 
     public async Task<User> Authenticate(string username, string password)
