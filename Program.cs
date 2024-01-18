@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
     services.AddControllers();
 
     // configure DI for application services
-    services.AddScoped<IUserService, UserService>();
+    services.AddSingleton<IUserService, UserService>();
 }
 
 var app = builder.Build();

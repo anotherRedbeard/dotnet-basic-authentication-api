@@ -35,4 +35,22 @@ public class UsersController : ControllerBase
         var users = await _userService.GetAll();
         return Ok(users);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateUser([FromBody]UserModel model)
+    {
+        var user = await _userService.CreateUser(model.FirstName, model.LastName, model.UserName, model.Password);
+        if (user == null)
+            return BadRequest(new { message = "User could not be created" });
+        return Ok(user);
+    }
+
+    [HttpDelete("{username}")]
+    public async Task<IActionResult> DeleteUser(string username)
+    {
+        var user = await _userService.DeleteUser(username);
+        if (user == null)
+            return BadRequest(new { message = "User could not be deleted" });
+        return Ok(user);
+    }
 }
