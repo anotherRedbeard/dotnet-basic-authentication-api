@@ -52,6 +52,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
+          auth-type: IDENTITY # Manages the credentials for the Azure login action
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2D53A369FFDA41EF9C8E0DCA93830147 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_1CCA2BDD438F4C25802109A58D1199C7 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C3A978D9DBD9485FA97CEFE1FAE1F3F0 }}
